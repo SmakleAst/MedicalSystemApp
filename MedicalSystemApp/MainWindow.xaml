@@ -1,0 +1,40 @@
+﻿<Window x:Class="MedicalSystemApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalSystemApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="{Binding SystemParameters.PrimaryScreenHeight}" Width="{Binding SystemParameters.PrimaryScreenWidth}">
+
+
+
+    <Window.Resources>
+        <Image x:Key="Image.First" Source="D:\Guap\Diplom\MedicalSystemApp\MedicalSystemApp\Resources\MainIcon1.png"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="4" Grid.Row="0" Style="{StaticResource Text}" FontSize="18"  Name="ResultText" Text="Выберите область диагностики"/>
+        
+        <Button Grid.Column="4" Grid.Row="1" Style="{StaticResource GelButton}" Width="170" Height="50" Content="Легкие" Click="LungButton_Click" />
+        <Button Grid.Column="4" Grid.Row="2" Style="{StaticResource GelButton}" Width="170" Height="50" Content="Сердце" Click="HeartButton_Click" />
+        <Button Grid.Column="4" Grid.Row="3" Style="{StaticResource GelButton}" Width="170" Height="50" Content="Печень" Click="HepatitisButton_Click" />
+
+        <ContentPresenter Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" x:Name="imgContent" Content="{StaticResource Image.First}"/>
+    </Grid>
+</Window>
